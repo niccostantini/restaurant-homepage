@@ -1,92 +1,44 @@
-const Element = function(type, content, elementClass = '') {
+import blackbirdsLunchImage from './assets/images/our-story-blackbirds-lunch.jpg';
+import blackbirdsToucansImage from './assets/images/our-story-blackbirds-toucans.jpg';
 
-    // this.content = content;
-    // this.type = type;
-    // this.elementClass = elementClass;
+function appendStory(content) {
+    // Create the main div with id and class
+    const ourStoryDiv = document.createElement('div');
+    ourStoryDiv.id = 'ourStory';
+    ourStoryDiv.className = 'child';
 
-    function create() {
-        const element = document.createElement(type);
-        if(elementClass != '') {element.classList.add(elementClass)};
-        element.textContent = content;
-        return element;
+    // Create the h2 element
+    const heading = document.createElement('h2');
+    heading.textContent = 'Our story';
+    ourStoryDiv.appendChild(heading);
+
+    // Function to create a text and image block
+    function createTextBlock(paragraphHTML, imgSrc) {
+        const textDiv = document.createElement('div');
+        textDiv.className = 'text';
+
+        const paragraph = document.createElement('p');
+        paragraph.innerHTML = paragraphHTML;
+        textDiv.appendChild(paragraph);
+
+        const img = document.createElement('img');
+        img.src = imgSrc;
+        textDiv.appendChild(img);
+
+        return textDiv;
     }
 
-    function add() {
-        const element = create();
-        document.querySelector('#content').appendChild(element)
-    }
+    // First story block
+    const firstParagraph = `<b>The Blackbird's Nest</b> hatched when a gang of <b>blackbirds</b> crash-landed in town, lured by the scent of roasted veggies and tempeh so good it could make tofu jealous.<br> They figured, why not open a joint where <span class="highlight">plant-based eats are the star</span>, and even the birds could feel smug about it? Our chef insists the secret ingredient is “just a pinch of cheek,” but we suspect it’s the organic kale. Fly by for a laugh, stay for the veg—just don’t try to outwit a <b>blackbird</b>!`;
+    const firstTextBlock = createTextBlock(firstParagraph, blackbirdsLunchImage);
+    ourStoryDiv.appendChild(firstTextBlock);
 
-    return {add}
+    // Second story block
+    const secondParagraph = `One day, the <b>blackbirds</b> at <b>The Blackbird's Nest</b> had an unexpected visit from a flock of flamboyant <i>toucans</i>.<br> The meeting quickly turned into a culinary fusion fiesta! The <i>toucans</i>, known for their bold beaks and even bolder flavors, introduced the <b>blackbirds</b> to tropical fruits and spicy peppers.<br><span class="highlight">The result? A delightful fusion of flavors</span> that married the simplicity of <b>blackbird</b> cuisine with the vibrant zest of the <i>toucan</i>’s tropical treats. Now, the menu boasts dishes that are as colorful as a toucan’s beak!`;
+    const secondTextBlock = createTextBlock(secondParagraph, blackbirdsToucansImage);
+    ourStoryDiv.appendChild(secondTextBlock);
+
+    content.appendChild(ourStoryDiv);
 }
 
-const createHome = function(content) {
-    // Create form elements
-const formTitle = document.createElement('h1');
-formTitle.textContent = 'My first form';
-
-const form = document.createElement('form');
-form.action = './my-handling-form/results.txt';
-form.method = 'post';
-
-const ul = document.createElement('ul');
-
-// Name field
-const nameLi = document.createElement('li');
-const nameLabel = document.createElement('label');
-nameLabel.setAttribute('for', 'name');
-nameLabel.textContent = 'Name:';
-const nameInput = document.createElement('input');
-nameInput.type = 'text';
-nameInput.name = 'name';
-nameInput.id = 'name';
-nameLi.appendChild(nameLabel);
-nameLi.appendChild(nameInput);
-ul.appendChild(nameLi);
-
-// Email field
-const emailLi = document.createElement('li');
-const emailLabel = document.createElement('label');
-emailLabel.setAttribute('for', 'email');
-emailLabel.textContent = 'E-mail:';
-const emailInput = document.createElement('input');
-emailInput.type = 'email';
-emailInput.name = 'email';
-emailInput.id = 'email';
-emailLi.appendChild(emailLabel);
-emailLi.appendChild(emailInput);
-ul.appendChild(emailLi);
-
-// Message field
-const messageLi = document.createElement('li');
-const messageLabel = document.createElement('label');
-messageLabel.setAttribute('for', 'message');
-messageLabel.textContent = 'Message:';
-const messageTextarea = document.createElement('textarea');
-messageTextarea.name = 'message';
-messageTextarea.id = 'message';
-messageLi.appendChild(messageLabel);
-messageLi.appendChild(messageTextarea);
-ul.appendChild(messageLi);
-
-// Submit and Reset buttons
-const buttonsLi = document.createElement('li');
-const submitButton = document.createElement('button');
-submitButton.type = 'submit';
-submitButton.textContent = 'Submit';
-const resetButton = document.createElement('button');
-resetButton.type = 'reset';
-resetButton.textContent = 'Reset';
-buttonsLi.appendChild(submitButton);
-buttonsLi.appendChild(resetButton);
-ul.appendChild(buttonsLi);
-
-// Append all elements to the form
-form.appendChild(ul);
-
-// Append form title and form to the body
-content.appendChild(formTitle);
-content.appendChild(form);
-
-}
-
-export {Element, createHome}
+export {appendStory};

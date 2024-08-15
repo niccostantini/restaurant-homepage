@@ -1,3 +1,34 @@
 #ourStory {
-    margin: 25px, 40px, 0px, 40px;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    padding: 60px 60px 60px 60px;
+}
+
+#ourStory p {
+    padding: 10px 40px 0 0;
+    line-height: 1.5;
+    text-align: justify;
+    text-justify: inter-word;
+}
+
+.text:nth-child(3) {
+    display: flex;
+    flex-direction: row-reverse;
+    text-align: right;
+}
+
+#ourStory .text:nth-child(3) p {
+    padding: 10px 0 0 40px;
+}
+
+.text {
+    display: flex;
+}
+
+img {
+    border-radius: 50%;
+    box-shadow: 6px 6px 6px var(--color1) ;
+    height: 45%;
+    width: 45%;
 }
