@@ -1,8 +1,13 @@
 import "./styles.css";
-import {Element} from "./home";
+import "./our-story.css";
+
+import {Element, createHome} from "./home";
 import "./menu.js";
 import "./contact.js";
 
-const porcoDio = Element("div", "Porco Dio", "bestemmia");
+import 'font-awesome/css/font-awesome.css';
+import './fonts.scss';
 
-porcoDio.add();
+const content = document.querySelector("#content");
+
+// createHome(content)
