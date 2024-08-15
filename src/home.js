@@ -13,7 +13,7 @@ const Element = function(type, content, elementClass = '') {
 
     function add() {
         const element = create();
-        document.body.appendChild(element)
+        document.querySelector('#content').appendChild(element)
     }
 
     return {add}

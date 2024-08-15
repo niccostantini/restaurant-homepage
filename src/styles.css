@@ -1,3 +1,13 @@
+@import "./normalize.css";
+
+:root {
+    --color1: #26190D;
+    --color2: #594031;
+    --color3: #A69586;
+    --color4: #D95204;
+    --color5: #F29F05;
+}
+
 body {
     background-color: rebeccapurple;
   }

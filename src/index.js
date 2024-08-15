@@ -1,7 +1,7 @@
 import "./styles.css";
 import {Element} from "./home";
-// import "./menu.js";
-// import "./contact.js";
+import "./menu.js";
+import "./contact.js";
 
 const porcoDio = Element("div", "Porco Dio", "bestemmia");
 
