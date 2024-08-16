@@ -5,7 +5,7 @@ function appendStory(content) {
     // Create the main div with id and class
     const ourStoryDiv = document.createElement('div');
     ourStoryDiv.id = 'ourStory';
-    ourStoryDiv.className = 'child';
+    ourStoryDiv.className = 'child fade-in'; // Start with fade-in class
 
     // Create the h2 element
     const heading = document.createElement('h2');
@@ -38,7 +38,13 @@ function appendStory(content) {
     const secondTextBlock = createTextBlock(secondParagraph, blackbirdsToucansImage);
     ourStoryDiv.appendChild(secondTextBlock);
 
-    content.appendChild(ourStoryDiv);
+    content.appendChild(ourStoryDiv); // Append the content first
+
+    
+    // Trigger the fade-in by forcing a reflow before adding the "show" class
+    window.requestAnimationFrame(() => {
+        ourStoryDiv.classList.add("show");
+    });
 }
 
 export {appendStory};

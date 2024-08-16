@@ -28,6 +28,10 @@ function createMenuFactory() {
     const menuDiv = document.createElement('div');
     menuDiv.classList.add('menuDiv');
 
+    const menuTitle = document.createElement("h2");
+    menuTitle.textContent = "Our Specialties";
+    menuDiv.appendChild(menuTitle);
+
 
         for (let category in list) {                                 // for each category
             const section = document.createElement('section');       // create a section for category
