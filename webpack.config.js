@@ -3,6 +3,7 @@ const path = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const { watch } = require("fs");
 
+
 module.exports = {
   mode: "development",                  // mode can be development or production
   entry: "./src/index.js",              // define entry point
