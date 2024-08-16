@@ -1,3 +1,5 @@
+import GitHubImg from "./assets/images/github-mark.png";
+
 // Create the contact entries
 const contactEntries = [
     {
@@ -40,7 +42,7 @@ contactEntries.forEach(entry => {
         leftSpan.innerHTML = entry.svg;
     } else {
         const img = document.createElement('img');
-        img.src = entry.imgSrc;
+        img.src = GitHubImg;
         leftSpan.appendChild(img);
     }
 
