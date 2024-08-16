@@ -19,7 +19,7 @@ const contactEntries = [
     },
     {
         id: 'github',
-        imgSrc: './assets/images/github-mark.png',
+        imgSrc: GitHubImg,
         text: '<a href="https://www.github.com/niccostantini">@niccostantini</a>'
     }
 ];
