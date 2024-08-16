@@ -37,26 +37,26 @@ module.exports = {
         test: /\.(png|svg|jpg|jpeg|gif|webp)$/i,
         type: "asset/resource",
       },
-      // { //FOR LOADING FONTS
-      //   test: /\.(woff|woff2|eot|ttf|otf)$/i,
-      //   type: 'asset/resource',
-      // },
+      { //FOR LOADING FONTS
+        test: /\.(woff|woff2|eot|ttf|otf)$/i,
+        type: 'asset/resource',
+      },
       {
         test: /\.scss$/,
         use: ['style-loader', 'css-loader', 'sass-loader']
       },
-      {
-        test: /\.(woff2|ttf|eot|svg)(\?v=\d+\.\d+\.\d+)?$/,
-        use: [
-          {
-            loader: 'file-loader',
-            options: {
-              name: '[name].[ext]',
-              outputPath: 'fonts/'
-            }
-          }
-        ]
-      }
+      // {
+      //   test: /\.(woff2|ttf|eot|svg)(\?v=\d+\.\d+\.\d+)?$/,
+      //   use: [
+      //     {
+      //       loader: 'file-loader',
+      //       options: {
+      //         name: '[name].[ext]',
+      //         outputPath: 'fonts/'
+      //       }
+      //     }
+      //   ]
+      // }
     ],
   },
   watch: true
