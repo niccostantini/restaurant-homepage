@@ -13,5 +13,11 @@
   },
   "dependencies": {
     "font-awesome": "^4.7.0"
+  },
+  "scripts": {
+    "_COMMENT": "Syntax: npm run <script_name> (e.g. npm run deploy === git subtree push --prefix dist origin gh-pages). npx is dropped because we only need it to run them directly in th eterminal",
+    "build": "webpack",
+    "dev": "webpack serve",
+    "deploy": "git subtree push --prefix dist origin gh-pages"
   }
 }

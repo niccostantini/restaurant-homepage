@@ -5,7 +5,7 @@ const { watch } = require("fs");
 
 
 module.exports = {
-  mode: "development",                  // mode can be development or production
+  mode: "production",                  // mode can be development or production
   entry: "./src/index.js",              // define entry point
   output: {
     filename: "main.js",                     // all .js material is gonna go into this file
@@ -58,6 +58,11 @@ module.exports = {
       //   ]
       // }
     ],
+  },
+  performance: {
+    hints: false,
+    maxEntrypointSize: 512000,
+    maxAssetSize: 512000,
   },
   watch: true
 };
